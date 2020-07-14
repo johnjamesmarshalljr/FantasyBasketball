@@ -24,7 +24,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 
+gem 'httparty'
 
+gem 'pry-rails'
 
 
 # Use Active Storage variant

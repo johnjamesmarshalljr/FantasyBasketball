@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+data = HTTParty.get('http://data.nba.net/10s/prod/v1/2016/players.json')
+
+
+players = data['league']['standard'].each do |p|
+  Player.create(firstName: p['firstName'], lastName: p['lastName'], yearsPro: p['yearsPro'], country: p['country'])
+end
