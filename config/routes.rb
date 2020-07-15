@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "users#home"
+  root "application#welcome"
   devise_for :users, controllers: {omniauth_callbacks: 'omniauth'}
   resources :teams
   resources :players
