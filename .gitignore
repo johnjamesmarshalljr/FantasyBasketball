@@ -4,6 +4,15 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+github
+Client ID
+ca2fd9aaaa53feab078f
+Client Secret
+93d2d41ebdbabde79b08b57798308c0903ebbebd
+
+
+
+
 # Ignore bundler config.
 /.bundle
 

@@ -24,6 +24,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 
+gem 'omniauth'
+
+gem 'omniauth-github'
+
+gem 'activerecord-session_store'
+
 gem 'httparty'
 
 gem 'pry-rails'
