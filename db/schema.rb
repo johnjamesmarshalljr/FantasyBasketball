@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_15_153721) do
+ActiveRecord::Schema.define(version: 2020_07_16_190605) do
+
+  create_table "player_teams", force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "player_id"
+    t.boolean "active", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["player_id"], name: "index_player_teams_on_player_id"
+    t.index ["team_id"], name: "index_player_teams_on_team_id"
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "firstName"
     t.string "lastName"
     t.string "yearsPro"
     t.string "country"
+    t.string "position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -33,6 +44,8 @@ ActiveRecord::Schema.define(version: 2020_07_15_153721) do
   create_table "teams", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.string "team_name"
   end
 
   create_table "users", force: :cascade do |t|
