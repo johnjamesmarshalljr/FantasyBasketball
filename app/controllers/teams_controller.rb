@@ -7,14 +7,14 @@ def index
 
    if params[:user_id]
     @teams = current_user.teams
-  else 
+  else
     @teams = Team.all
   end
 end
 
 
 def show
-
+  @team = Team.find_by_id(params[:id])
 end
 
 def new
