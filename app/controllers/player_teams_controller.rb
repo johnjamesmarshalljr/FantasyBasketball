@@ -9,10 +9,10 @@ class PlayerTeamsController < ApplicationController
 
   def create
     team = Team.find_by_id(params[:team_id])
-    if team.players.is_empty?
+    if team.players.empty?
       team.player_ids = pt_params.values
     else
-      pt_params.values each {|n| team.player_ids << n}
+      pt_params.values.each {|n| team.player_ids << n}
     end
     redirect_to user_team_path(current_user, team)
   end
