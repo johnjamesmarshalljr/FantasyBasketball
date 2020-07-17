@@ -1,5 +1,7 @@
+<br>
+<h2> Here is your team! </h2>
 <% @team.players.each do |p| %>
-  <%=  p.fullname %><br>
+  <%=  p.fullname + ', ' + p.position + ', ' + p.country %><br>
   <%  end %>
 
 <!-- active/ team captain submittable form -->
