@@ -14,9 +14,12 @@
 
   <body>
 
-    <%= link_to "Create A Team", new_team_player_team_path(Team.first) %>
+    <%if !user_signed_in?%>
     <%= link_to "Login", new_user_session_path %>
+    <%else%>
+    <%= link_to "Create A Team", new_team_player_team_path(current_user) %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <%end%>
     <%= yield %>
 
 

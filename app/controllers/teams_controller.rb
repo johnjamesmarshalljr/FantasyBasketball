@@ -14,11 +14,14 @@ end
 
 
 def show
-  @team = Team.find_by_id(params[:id])
+  # binding.pry
+  @team = Team.find_by(params[:team_id])
 end
 
 def new
-
+  # binding.pry
+  @user = current_user
+    @team = Team.new(params[:team_id])
 end
 
 

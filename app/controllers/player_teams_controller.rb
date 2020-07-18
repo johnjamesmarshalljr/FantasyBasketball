@@ -2,14 +2,15 @@
 class PlayerTeamsController < ApplicationController
 
 def new
-  @team = Team.find_by_id(params[:team_id])
+  @team = Team.find_by(params[:team_id])
   @guard = Player.get_guards
   @forward = Player.get_forwards
   @center = Player.get_centers
 end
 
 def create
-  team = Team.find_by_id(params[:team_id])
+  team = Team.find_by(params[:team_id])
+  # binding.pry
   if team.players.empty?
     team.player_ids = pt_params.values
   else
@@ -22,7 +23,7 @@ end
 
 private
 def pt_params
-  params.permit(:guard_id, :forward_id, :center_id)
+  params.permit(:guard_id, :forward_id, :center_id, :authenticity_token, :commit, :team_id)
 end
 #returns hash with all
 end
