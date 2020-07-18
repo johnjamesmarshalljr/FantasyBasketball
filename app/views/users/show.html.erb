@@ -1,4 +1,3 @@
-
-  <% current_user.teams.each do |u| %>
-  <%= u.player_teams.position + ' ' + u.player_teams. %>
-  <% end %>
+ <% @player_teams.each do |pt| %>
+<h2> <%= pt.players %> </h2>
+<% end  %> 

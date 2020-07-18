@@ -1,0 +1,10 @@
+<%= form_tag user_teams_path(current_user) do %>
+<h3> Pick a Guard! </h3>
+  <%= select_tag :guard_id, options_from_collection_for_select(@guard, :id, :fullname), include_blank: true   %>
+  <h3> Pick a Forward! </h3>
+    <%= select_tag :forward_id, options_from_collection_for_select(@forward, :id, :fullname), include_blank: true   %>
+    <h3> Pick a Center! </h3>
+      <%= select_tag :center_id, options_from_collection_for_select(@center, :id, :fullname), include_blank: true   %>
+<br>
+      <%= submit_tag "Add Players" %>
+  <%end%>

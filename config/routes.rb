@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: :show do
     resources :teams, except: :patch
   end
+
+  # post '/users/:id/teams/new', to: 'teams#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
