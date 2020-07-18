@@ -12,23 +12,30 @@ def index
   end
 end
 
-
-def show
-  # binding.pry
-  @team = Team.find_by(params[:team_id])
+def create
+@new_team = current_user.teams.build(team_params)
+if @new_team.save
+  redirect_to new_team_player_team_path(@new_team)
+    # redirect_to teams_path
+else
+    render :new
+end
 end
 
 def new
   # binding.pry
-  @user = current_user
-    @team = Team.new(params[:team_id])
+
+    @team = Team.new
+    @team.player_teams.build
 end
 
-
-def create
+def show
+   # binding.pry
+  @team = Team.find_by(id:params[:id])
 
 
 end
+
 
 def edit
 
@@ -38,6 +45,10 @@ def update
 
 end
 
+private
 
+def team_params
+    params.require(:team).permit(:team_name)
+end
 
 end
