@@ -1,16 +1,17 @@
 
 class PlayerTeamsController < ApplicationController
 
-def new
-  # binding.pry
-  @team = Team.find_by(id:params[:team_id])
-  @guard = Player.get_guards
-  @forward = Player.get_forwards
-  @center = Player.get_centers
-  # binding.pry
-end
+# def new
+#   # binding.pry
+#   @team = Team.find_by(id:params[:team_id])
+#   @guard = Player.get_guards
+#   @forward = Player.get_forwards
+#   @center = Player.get_centers
+#   # binding.pry
+# end
 
 def create
+  # trans over to teams controller
   team = Team.find_by(id:params[:team_id])
    # binding.pry
   if team.players.empty?

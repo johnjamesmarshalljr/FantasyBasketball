@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_190605) do
+ActiveRecord::Schema.define(version: 2020_07_18_155348) do
 
   create_table "player_teams", force: :cascade do |t|
     t.integer "team_id"
     t.integer "player_id"
-    t.boolean "active", default: true
+    t.boolean "captain", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["player_id"], name: "index_player_teams_on_player_id"

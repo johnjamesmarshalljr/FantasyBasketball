@@ -1,5 +1,23 @@
 <%= form_for @team do |f| %>
   <%= f.label :team_name %>
   <%= f.text_field :team_name %>
+  <%= f.fields_for :player_teams do |pt| %>
+<h3> Pick a player </h3>
+    <% if pt.object_name.include?("1")  %>
+      <% display = "select a forward"   %>
+    <% elsif pt.object_name.include?("2")   %>
+      <% display = "select a guard"  %>
+    <% else  %>
+      <% display = "select a center"  %>
+    <% end %>
+
+
+<%=   pt.select :player_id, options_from_collection_for_select(Player.custom_all, :id, :fullname), prompt: display%>
+
+
+
+
+<%= pt.check_box :captain %>
+    <% end %>
   <%= f.submit %>
 <% end %>

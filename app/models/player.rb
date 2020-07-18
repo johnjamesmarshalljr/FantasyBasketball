@@ -18,6 +18,20 @@ def fullname
   firstName + ' '+  lastName
 end
 
+def self.custom_all
+  everyone = Player.where.not(position: "").order(:position).collect{|p| p}
+  # binding.pry
+
+  forward = Player.find_by(firstName: "-- Forward")
+  guard = Player.find_by(firstName: "-- Guard")
+  center = Player.find_by(firstName: "-- Center")
+  everyone.insert(0, center)
+  f_index = everyone.find_index{|player| player.position == "F"}
+  everyone.insert(f_index, forward)
+  g_index = everyone.find_index{|player| player.position == "G"}
+  everyone.insert(g_index, guard)
+end
+
 
 
 
