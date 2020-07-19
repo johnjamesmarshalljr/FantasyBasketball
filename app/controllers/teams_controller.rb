@@ -11,10 +11,16 @@ def index
 end
 
 def create
-  #REFACTOR, work with nested params, add more players to team
+  #REFACTOR, work with nested params, add more players
+
 @new_team = current_user.teams.build(team_params)
+
+    # binding.pry
+     # p =  Player.find_by(params[:team][:player_teams_attributes])
+
+  # @new_team.players << p
 if @new_team.save
-  redirect_to new_team_player_team_path(@new_team)
+  redirect_to user_team_path(current_user, @new_team)
     # redirect_to teams_path
 else
     render :new
@@ -51,7 +57,7 @@ end
 private
 
 def team_params
-    params.require(:team).permit(:team_name)
+    params.require(:team).permit(:team_name, :player_teams_attributes => [:player_id, :captain])
 end
 
 end

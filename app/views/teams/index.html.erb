@@ -1,4 +1,6 @@
 
-<% @teams.each do |t| %>
-<%= t.players.fullname %>
-<% end %>
+<h2> Here is your team! </h2>
+
+<% @new_team.players.each do |p| %>
+  <%=  p.fullname + ', ' + p.position + ', ' + p.country %><br>
+  <%  end %>

@@ -10,6 +10,10 @@ class PlayerTeamsController < ApplicationController
 #   # binding.pry
 # end
 
+def show
+
+end
+
 def create
   # trans over to teams controller
   team = Team.find_by(id:params[:team_id])
@@ -26,7 +30,7 @@ end
 
 private
 def pt_params
-  params.permit(:guard_id, :forward_id, :center_id, )
+  params.permit(:guard_id, :forward_id, :center_id, :player_teams_attributes)
 end
 #returns hash with all
 end
