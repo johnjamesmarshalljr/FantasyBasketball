@@ -7,8 +7,6 @@ def index
    if params[:user_id]
     @teams = current_user.teams
     @players = current_user.players
-
-
   else
     @teams = Team.all
   end

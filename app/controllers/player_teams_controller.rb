@@ -12,9 +12,9 @@ class PlayerTeamsController < ApplicationController
 
 def index
   # binding.pry
-   if params[:user_id]
-    @team = current_user.teams
-     @player_teams = @team.player_teams
+   if current_user
+    @teams = current_user.teams
+     @player_teams = @teams.last.player_teams
   else
     @teams = Team.all
   end
@@ -23,7 +23,7 @@ end
 
 def show
   if params[:user_id]
-   @teams = current_user.teams.find_by(id:params[:id])
+   @teams = current_user.teams.find_by(id:params[:team_id])
    @player_team = @teams.players
  else
    @teams = Team.all
