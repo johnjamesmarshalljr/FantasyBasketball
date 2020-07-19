@@ -4,7 +4,7 @@ class Team < ApplicationRecord
   has_many :players, through: :player_teams
 
   accepts_nested_attributes_for :player_teams
-
+  accepts_nested_attributes_for :players
 # def player_teams_attributes=(pt_params)
 #   pt_params.values.each do |pr_attrs|
 #     unless pr_attrs.values.any?(&:empty?)

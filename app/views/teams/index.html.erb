@@ -1,6 +1,6 @@
 
-<h2> Here is your team! </h2>
+<h2> List of Teams </h2>
 
-<% @new_team.players.each do |p| %>
-  <%=  p.fullname + ', ' + p.position + ', ' + p.country %><br>
+<% @teams.each do |t| %>
+  <%= link_to t.team_name, team_player_teams_path(current_user)%><br>
   <%  end %>

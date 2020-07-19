@@ -1,3 +1,30 @@
+class Player < ApplicationRecord
+    has_many :teams
+    has_many :users, through: :teams
+
+class User < ApplicationRecord
+    has_many :teams
+    has_many :players, through: :teams
+
+class Team < ApplicationRecord
+      belongs_to :user
+      has_many :player_teams
+      has_many :players, through: :player_teams
+
+
+class PlayerTeam < ApplicationRecord
+        belongs_to :team
+        belongs_to :player
+        needs create? or does team create work
+
+
+
+
+
+
+
+
+
 <h3> Pick a Guard! </h3>
   <%= pt.select :guard_id, options_from_collection_for_select(@guard, :id, :fullname), include_blank: true   %>
   <h3> Pick a Forward! </h3>

@@ -1,0 +1,11 @@
+
+
+
+<br>
+<%@teams.each do |t| %><br>
+<%=  link_to t[:team_name], team_player_teams_path(current_user)  %> <br>
+<% t.players.each do |p| %><br>
+<%=  p.firstName + ' ' + p.lastName + "  "   + "Position:" + p.position  %>
+  <br>  <% end %>
+    <% end %>
+<br>

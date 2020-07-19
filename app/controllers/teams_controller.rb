@@ -3,8 +3,12 @@ class TeamsController < ApplicationController
 
 
 def index
+  # binding.pry
    if params[:user_id]
     @teams = current_user.teams
+    @players = current_user.players
+
+
   else
     @teams = Team.all
   end
@@ -14,8 +18,8 @@ def create
   #REFACTOR, work with nested params, add more players
 
 @new_team = current_user.teams.build(team_params)
-
-    # binding.pry
+    # @new_team.players << current_user.players
+     # binding.pry
      # p =  Player.find_by(params[:team][:player_teams_attributes])
 
   # @new_team.players << p
