@@ -14,12 +14,10 @@ end
 
 def create
   #REFACTOR, work with nested params, add more players
-
 @new_team = current_user.teams.build(team_params)
     # @new_team.players << current_user.players
      # binding.pry
      # p =  Player.find_by(params[:team][:player_teams_attributes])
-
   # @new_team.players << p
 if @new_team.save
   redirect_to user_team_path(current_user, @new_team)
@@ -49,11 +47,33 @@ end
 
 
 def edit
-
+  # binding.pry
+  @team = Team.find_by(id:params[:id])
+  if current_user.teams.include?(@team)
+    @all_users = User.all
+    render :edit
+  else
+    redirect_to user_teams_path(current_user)
+  end
 end
 
-def update
 
+
+def update
+  @team = Team.find_by(id:params[:id])
+  if @team.update(team_params)
+    redirect_to user_team_path(current_user, @team)
+  else
+    @all_users = User.all
+    render :edit
+  end
+  @all_users = User.all
+end
+
+def destroy
+  @team = Team.find_by(id:params[:id])
+  @team.destroy if current_user.teams.include?(@team)
+  redirect_to user_teams_path(current_user)
 end
 
 private
