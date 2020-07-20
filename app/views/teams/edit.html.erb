@@ -18,7 +18,7 @@
       <% end %>
 
 
-  <%=   pt.select :player_id, options_from_collection_for_select(Player.custom_all, :id, :fullname), prompt: display%>
+  <%=   pt.select :player_id, options_from_collection_for_select(Player.all, :id, :fullname), {include_blank: true, prompt: display}%>
 
 
 

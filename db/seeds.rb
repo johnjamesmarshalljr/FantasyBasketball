@@ -18,10 +18,10 @@ p =  Player.new(firstName: p['firstName'],
         p.save unless p.position.empty?
 end
 
-
-[{firstName: "-- Center", position: "C"},
-  {firstName: "-- Forward", position: "F"},
-  {firstName: "-- Guard", position: "G"}
-].each do |h|
-  Player.create(firstName: h[:firstName], lastName: "Players --")
-end
+# 
+# [{firstName: "-- Center", position: "C"},
+#   {firstName: "-- Forward", position: "F"},
+#   {firstName: "-- Guard", position: "G"}
+# ].each do |h|
+#   Player.create(firstName: h[:firstName], lastName: "Players --")
+# end

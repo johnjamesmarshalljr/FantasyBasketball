@@ -49,6 +49,7 @@ end
 def edit
   # binding.pry
   @team = Team.find_by(id:params[:id])
+  # binding.pry
   if current_user.teams.include?(@team)
     @all_users = User.all
     render :edit
@@ -61,6 +62,7 @@ end
 
 def update
   @team = Team.find_by(id:params[:id])
+
   if @team.update(team_params)
     redirect_to user_team_path(current_user, @team)
   else

@@ -21,7 +21,6 @@ end
 def self.custom_all
   everyone = Player.where.not(position: "").order(:position).collect{|p| p}
   # binding.pry
-
   forward = Player.find_by(firstName: "-- Forward")
   guard = Player.find_by(firstName: "-- Guard")
   center = Player.find_by(firstName: "-- Center")
