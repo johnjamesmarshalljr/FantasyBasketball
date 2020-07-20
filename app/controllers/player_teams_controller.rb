@@ -14,7 +14,7 @@ def index
   # binding.pry
    if current_user
     @teams = current_user.teams
-     @player_teams = @teams.last.player_teams
+     # @player_teams = @teams.last.player_teams
   else
     @teams = Team.all
   end
@@ -44,9 +44,12 @@ def create
 end
 #code in validations with java script front end?
 
+
+
+
 private
 def pt_params
-  params.permit(:guard_id, :forward_id, :center_id, :player_teams_attributes, :id)
+  params.permit(:guard_id, :forward_id, :center_id, :player_teams_attributes)
 end
 #returns hash with all
 end

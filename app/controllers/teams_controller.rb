@@ -62,7 +62,7 @@ end
 
 def update
   @team = Team.find_by(id:params[:id])
-
+      # binding.pry
   if @team.update(team_params)
     redirect_to user_team_path(current_user, @team)
   else
@@ -81,7 +81,7 @@ end
 private
 
 def team_params
-    params.require(:team).permit(:team_name, :player_teams_attributes => [:player_id, :captain])
+    params.require(:team).permit(:team_name, :player_teams_attributes => [:player_id, :captain, :id])
 end
 
 end
