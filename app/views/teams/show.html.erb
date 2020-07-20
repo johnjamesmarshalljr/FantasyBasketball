@@ -1,6 +1,6 @@
 <br>
 <h2> Here is your team! </h2>
-<h3> "Click Link to Add Players"<%= link_to @team.team_name, edit_user_team_path(current_user, @team) %> </h3>
+<h3> "Click to Edit Team"<%= link_to @team.team_name, edit_user_team_path(current_user, @team) %> </h3>
 <% @team.players.each do |p| %>
   <%=  p.fullname + ', ' + p.position + ', ' + p.country %><br>
   <%  end %>
