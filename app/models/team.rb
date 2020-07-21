@@ -7,7 +7,7 @@ class Team < ApplicationRecord
 
 
     accepts_nested_attributes_for :player_teams
-  accepts_nested_attributes_for :players
+  # accepts_nested_attributes_for :players
 
 # def player_teams_attributes=(pt_params)
 #   # binding.pry

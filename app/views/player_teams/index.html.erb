@@ -1,11 +1,13 @@
-
-
-
-<br>
 <%@teams.each do |t| %><br>
 <%=  link_to t[:team_name], user_team_path(current_user, t)  %> <br>
-<% t.players.each do |p| %><br>
-<%=  p.firstName + ' ' + p.lastName + "  "   + "Position:" + p.position  %>
+<%@player_teams = PlayerTeam.where(:team_id => t.id)%>
+<% t.players.each do |ply| %><br>
+<%=  ply.firstName + ' ' + ply.lastName + "  "   + "Position: " + ply.position %>
+
+<%   if @player_teams.find_by(:player_id => ply.id).captain %>
+  Captain: <%= ply.fullname %>
+
+<% end %>
   <br>  <% end %>
-    <% end %>
+<% end %>
 <br>
