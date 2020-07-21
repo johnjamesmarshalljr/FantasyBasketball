@@ -1,7 +1,20 @@
 <h1> List of NBA Players </h1>
-
+<h3>Guards</h3>
   <ol>
-    <% @players.each do |p| %>
-    <%=  p.firstName %><br/>
+    <% @guards.each do |p| %>
+    <%=  p.fullname %><br/>
     <% end %>
   </ol>
+  <h3>Forwards</h3>
+    <ol>
+      <% @forwards.each do |p| %>
+      <%=  p.fullname %><br/>
+      <% end %>
+    </ol>
+
+  <h3>Centers</h3>
+      <ol>
+        <% @centers.each do |p| %>
+        <%=  p.fullname %><br/>
+        <% end %>
+      </ol>
