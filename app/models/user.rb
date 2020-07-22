@@ -9,6 +9,20 @@ class User < ApplicationRecord
   has_many :players, through: :teams
 
 
+
+  validates :password, :presence => true,
+                        :confirmation => true,
+                        :length => {:within => 6..40},
+                        :on => :create
+
+  validates :password, :presence => true,
+                        :confirmation => true,
+                        :length => {:within => 6..40},
+                        :on => :update
+
+  validates :email, uniqueness: true
+  validates :email, presence: true
+
   def self.create_from_github_data(provider_data)
     # binding.pry
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create! do |user|

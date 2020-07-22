@@ -41,7 +41,7 @@ end
 def show
    # binding.pry
   @team = Team.find_by(id:params[:id])
-
+  @player_teams = @team.player_teams
 
 end
 

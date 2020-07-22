@@ -18,11 +18,8 @@ def index
      # @team = Team.find_by(id:params[:team_id])
      # @team.player_ids = pt_params.values
      @player_teams = PlayerTeam.where(:team_id => params[:team_id])
-      @player_team_captain = PlayerTeam.find_by(id: params[:team_id])
-      # @teams.each do |t
-      #   t.plafgfyer_teams
-      # last.player_teams.last.captain?
-      # pt belongs to player
+
+
   else
     @teams = Team.all
   end

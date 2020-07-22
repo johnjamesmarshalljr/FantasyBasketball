@@ -5,7 +5,7 @@
 <%=  ply.firstName + ' ' + ply.lastName + "  "   + "Position: " + ply.position %>
 
 <%   if @player_teams.find_by(:player_id => ply.id).captain %>
-  Captain: <%= ply.fullname %>
+    * Captain
 
 <% end %>
   <br>  <% end %>
