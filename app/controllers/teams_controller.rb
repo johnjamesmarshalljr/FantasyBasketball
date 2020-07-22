@@ -7,49 +7,50 @@ def index
    if params[:user_id]
     @teams = current_user.teams
     @players = current_user.players
-  else
+    else
     @teams = Team.all
   end
 end
 
 def create
   #REFACTOR, work with nested params, add more players
-@new_team = current_user.teams.build(team_params)
+  @new_team = current_user.teams.build(team_params)
     # @new_team.players << current_user.players
      # binding.pry
      # p =  Player.find_by(params[:team][:player_teams_attributes])
   # @new_team.players << p
-if @new_team.save
+  if @new_team.save
   redirect_to user_team_path(current_user, @new_team)
     # redirect_to teams_path
-else
+  else
     render :new
-end
-end
+  end
+  end
 
 def new
   # binding.pry
   @guard = Player.get_guards
   @forward = Player.get_forwards
   @center = Player.get_centers
+
     @team = Team.new
+
     @team.player_teams.build
     @team.player_teams.build
     @team.player_teams.build
+
+
 end
 
 def show
    # binding.pry
   @team = Team.find_by(id:params[:id])
   @player_teams = @team.player_teams
-
 end
 
 
 def edit
-  # binding.pry
   @team = Team.find_by(id:params[:id])
-  # binding.pry
   if current_user.teams.include?(@team)
     @all_users = User.all
     render :edit
@@ -58,11 +59,8 @@ def edit
   end
 end
 
-
-
-def update
-  @team = Team.find_by(id:params[:id])
-      # binding.pry
+  def update
+    @team = Team.find_by(id:params[:id])
   if @team.update(team_params)
     redirect_to user_team_path(current_user, @team)
   else
@@ -70,7 +68,7 @@ def update
     render :edit
   end
   @all_users = User.all
-end
+  end
 
 def destroy
   @team = Team.find_by(id:params[:id])

@@ -21,7 +21,7 @@
     <%else%>
     <%= link_to "Available Players |", players_path %>
       <%= link_to "Your Teams |", user_teams_path(current_user) %>
-    <%= link_to "Create A Team |", new_team_path %>
+    <%= link_to "Create A Team |", new_user_team_path(current_user) %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <%end%>
     <%= yield %>
