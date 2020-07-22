@@ -8,11 +8,13 @@
     <%= stylesheet_link_tag 'new-age', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <div class="container"
   <p class="notice"><%= notice %></p>
          <p class="alert"><%= alert %></p>
 
-  <body>
+  <body class="preview-page">
+<nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
 
     <%if !user_signed_in?%>
     <%= link_to "Login", new_user_session_path %>

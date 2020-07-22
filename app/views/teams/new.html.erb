@@ -1,3 +1,7 @@
+<nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<% @team = @new_team || @team %>
+<%= render 'layouts/error', {obj: @team} if @team.errors.any? %>
+<br>
 <%= form_for @team do |f| %>
   <%= f.label :team_name %>
   <%= f.text_field :team_name %>
