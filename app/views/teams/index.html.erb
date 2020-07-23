@@ -1,13 +1,9 @@
 <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100">
-        <div class="col-lg-7 my-auto">
-          <div class="header-content mx-auto">
+
 <h2> Your Teams </h2>
+<%= image_tag("kyrie.jpg", width: 500, class: "img-responsive center-block") %>
  <div class="col-lg-6">
 <% @teams.each do |t| %>
  <p class="text-muted">
   <%= link_to t.team_name, user_team_path(current_user, t)%><br>
 <% end %>
-</div>
-<%= image_tag("kyrie.jpg", width: 500, class: "img-responsive center-block") %>

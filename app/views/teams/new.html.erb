@@ -2,7 +2,7 @@
     <div class="container h-100">
       <div class="row h-100">
         <div class="col-lg-7 my-auto">
-          <div class="header-content mx-auto">
+
 <% @team = @new_team || @team %>
 <%= render 'layouts/error', {obj: @team} if @team.errors.any? %>
 <%= form_for @team do |f| %>
@@ -29,3 +29,4 @@
 <% end %>
 <br>
 <%= image_tag("steph.jpg", width: 300, class: "img-responsive center-block") %>
+</div>
