@@ -5,23 +5,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'new-age', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'page_styles', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <div class="container"
-  <p class="notice"><%= notice %></p>
-         <p class="alert"><%= alert %></p>
+
 
   <body class="preview-page">
 <nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
-
+<div class="preview-bar bg-white fixed-top py-2 border-bottom-primary">
+  <div class="container-fluid h-100">
+    <div class="row align-items-center justify-content-between h-100">
+      <div class="navbar navbar-expand-lg navbar-light fixed-top">
     <%if !user_signed_in?%>
     <%= link_to "Login", new_user_session_path %>
     <%else%>
     <%= link_to "Available Players |", players_path %>
       <%= link_to "Your Teams |", user_teams_path(current_user) %>
     <%= link_to "Create A Team |", new_user_team_path(current_user) %>
+    <%= link_to "Full Roster |", team_player_teams_path(current_user) %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <%end%>
     <%= yield %>
@@ -29,5 +31,5 @@
 
 
   </body>
-  </div>
+
 </html>

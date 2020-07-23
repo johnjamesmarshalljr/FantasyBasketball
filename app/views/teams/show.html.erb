@@ -1,17 +1,18 @@
 <br>
-
-<nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
-<h2> Here is your team! </h2>
+<br>
+              <h1> Here is your team! </h1>
 <h3> Click to Edit Team: <%= link_to @team.team_name, edit_user_team_path(current_user, @team) %> </h3>
 
 <% @team.players.each do |p| %>
   <%=  p.fullname + ', ' + p.position + ', ' + p.country %><br>
 
     <%  end %>
-    <%= @team.get_captain.fullname %> is  your current captain
+  <b>  <%= @team.get_captain.fullname %> is  your current captain </b>
     <br>
+    <br>
+    <div class="myButton">
 <%= link_to 'Delete Team', user_team_path(@team), method: :delete %>
-
+    </div>
 
 <!-- active/ team captain submittable form -->
 <!-- @team.player_teams   -->

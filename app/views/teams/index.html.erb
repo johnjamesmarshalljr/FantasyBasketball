@@ -1,7 +1,11 @@
-<nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
-<h2> List of Teams </h2>
 
+<h1> Your Teams </h1>
+<i class="fas fa-bars"></i>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger"
 <% @teams.each do |t| %>
-  <%= link_to t.team_name, team_player_teams_path(current_user)%><br>
-
-  <%  end %>
+<li class="nav-item">
+  <%= link_to t.team_name, user_team_path(current_user, t)%><br>
+<% end %>

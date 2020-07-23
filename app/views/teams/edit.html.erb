@@ -1,5 +1,6 @@
+<%= stylesheet_link_tag 'page_styles.css', media: 'all', 'data-turbolinks-track': 'reload' %>
 <nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
-
+<br>
 <% @team = @team || @new_team %>
 
 <% if @team.errors.any? %>

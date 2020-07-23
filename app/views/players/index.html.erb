@@ -1,22 +1,23 @@
+<br>
 
-<nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
 <h1> List of NBA Players </h1>
-<h3>Guards</h3>
+
+  <h3>Guards</h3>
   <ol>
     <% @guards.each do |p| %>
-    <%=  p.fullname %><br/>
+    <%=  p.fullname + ' -- ' + p.country + ' -- ' +  p.yearsPro + ' years pro' %><br/>
     <% end %>
   </ol>
   <h3>Forwards</h3>
     <ol>
       <% @forwards.each do |p| %>
-      <%=  p.fullname %><br/>
+      <%=  p.fullname + ' -- ' + p.country + ' -- ' +  p.yearsPro + ' years pro' %><br/>
       <% end %>
     </ol>
 
   <h3>Centers</h3>
       <ol>
         <% @centers.each do |p| %>
-        <%=  p.fullname %><br/>
+        <%=  p.fullname + ' -- ' + p.country + ' -- ' +  p.yearsPro + ' years pro' %><br/>
         <% end %>
       </ol>
