@@ -1,4 +1,4 @@
-<section class="contact bg-primary"
+<section class="contact bg-primary">
     <div class="container">
 
         <div class="Thx">
@@ -10,9 +10,12 @@
     <br>
   <b>  <%= @team.get_captain.fullname %> is  your current captain </b>
     <br>
-    <div class="button">
-      <h4> Edit Team: <%= link_to @team.team_name, edit_user_team_path(current_user, @team) %> </h4>
+
+        <h4> Edit Team:<button class="btn" > <%= link_to @team.team_name, edit_user_team_path(current_user, @team) %> </h4>
+
+      <button class="btn" >
 <%= link_to 'Delete Team', user_team_path(@team), method: :delete %>
+        </button>
 </div>
 </div>
 <%= image_tag("ben.jpg", width: 500, class: "img-responsive center-block") %>

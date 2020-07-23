@@ -261,8 +261,8 @@ hr.light {
 
   div[class=Thx] {
     color: white;
-  text-shadow: 0px 1px 0px skyblue, 0 0 2px blue, 0 0 5px white;
-    background-color: #FF7F50;
+  text-shadow: 0px 1px 0px skyblue, 0 0 2px #E54C00 , 0 0 5px white;
+    background-color: #E54C00 ;
     color: white;
     padding: 2px 4px;
     margin: 8px 0;
@@ -277,6 +277,9 @@ hr.light {
   }
   .zig-zag { border: none; width: 50%; margin: auto; margin-top: 5%; margin-bottom: 5%; height: 40px; background: linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -20px 0, linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -20px 0, linear-gradient(315deg, #ECEDDC 25%, transparent 25%), linear-gradient(45deg, #ECEDDC 25%, transparent 25%); background-size: 40px 40px; background-color: #EC173A;}
 
+
+
+
   @keyframes example {
   from {background-color: #c7b3e8;}
   to {background-color:#7b98e8;}
@@ -288,7 +291,8 @@ div[class=Thx] {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  background-color: #FF7F50;
+  background-color: #EC4207;
+  text-shadow: 0px 1px 0px #AE00C6, 0 0 2px #E54C00 , 0 0 5px white;
   animation-name: example;
   animation-duration: 8s;
   animation-iteration-count: 20;
@@ -296,6 +300,22 @@ div[class=Thx] {
   max-width: 100%;
 height: auto;
 }
+
+div[class=bb] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+
+  text-shadow: 2px 1px 0px #FD006F, 0 0 2px #E54C00 , 0 0 5px white;
+  animation-name: example;
+  animation-duration: .3s;
+  animation-iteration-count: infinite;
+  max-width: 100%;
+
+}
+
+
 
 img {
 box-shadow: 10px 10px;
@@ -315,6 +335,10 @@ body {
 
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.bb {
+  font-family: 'Impact'
 }
 
 a {
@@ -337,7 +361,7 @@ hr.light {
   border-color: white;
 }
 
-h1,
+
 h2,
 h3,
 h4,
@@ -355,7 +379,7 @@ p {
 }
 
 section {
-  padding: 100px 0;
+  padding: 10px 0;
 }
 
 section h2 {
@@ -697,9 +721,16 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .bg-primary {
-  background: #fdcc52;
-  background: linear-gradient(#fdcc52, #fdc539);
+  background: #07726D ;
+  background: linear-gradient(#F000FF , #FFE400 );
 }
+
+.bb-primary {
+  background: #07726D ;
+  background: linear-gradient(#5998EF  , #1454AB);
+  color: white
+}
+
 
 .text-primary {
   color: #fdcc52;
@@ -717,15 +748,22 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
-  color: white;
-  border-color: #fdcc52;
-  background-color: #fdcc52;
+  color: #AE00C6;
+  border-color: #AE00C6;
+  background-color: #AE00C6;
 }
 
-.btn {
+.btn {   padding: 7px 24px;
+   margin: 8px 8px;
+   border: none;
+   cursor: pointer;
+   font-size: 14px;
+   text-align: center;
+   border-radius: 4px;
+   display: inline-block;
   border-radius: 300px;
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
