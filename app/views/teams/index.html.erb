@@ -1,11 +1,13 @@
-
-<h1> Your Teams </h1>
-<i class="fas fa-bars"></i>
-<div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger"
+<header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+<h2> Your Teams </h2>
+ <div class="col-lg-6">
 <% @teams.each do |t| %>
-<li class="nav-item">
+ <p class="text-muted">
   <%= link_to t.team_name, user_team_path(current_user, t)%><br>
 <% end %>
+</div>
+<%= image_tag("kyrie.jpg", width: 500, class: "img-responsive center-block") %>

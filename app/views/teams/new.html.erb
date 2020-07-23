@@ -1,10 +1,14 @@
-<nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
 <% @team = @new_team || @team %>
 <%= render 'layouts/error', {obj: @team} if @team.errors.any? %>
-<br>
 <%= form_for @team do |f| %>
   <%= f.label :team_name %>
   <%= f.text_field :team_name %>
+
   <%= f.fields_for :player_teams do |pt| %>
 <h3> Pick a player </h3>
     <% if pt.object_name.include?("1")  %>
@@ -14,15 +18,14 @@
     <% else  %>
       <% display = "select a center"  %>
     <% end %>
-
-
 <%=   pt.select :player_id, options_from_collection_for_select(Player.all, :id, :fullname), prompt: display%>
-
-
-
 
 <%= pt.check_box :captain %>
 <%= display = "Captain?" %>
+
     <% end %>
-  <%= f.submit %>
+
+ <%=f.submit%>
 <% end %>
+<br>
+<%= image_tag("steph.jpg", width: 300, class: "img-responsive center-block") %>

@@ -1,12 +1,17 @@
-<%= stylesheet_link_tag 'page_styles.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+<header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
 <nav class="navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<%= image_tag("harden.jpg", width: 400, class: "img-responsive center-block") %>
 <br>
 <% @team = @team || @new_team %>
 
 <% if @team.errors.any? %>
   <%= render 'layouts/error', {obj: @team} %>
   <% end%>
-
+<br>
   <%= form_for @team do |f| %>
     <%= f.label :team_name %>
     <%= f.text_field :team_name %>
@@ -20,14 +25,11 @@
         <% display = "select a center"  %>
       <% end %>
 
-
   <%=   pt.select :player_id, options_from_collection_for_select(Player.all, :id, :fullname), {include_blank: true, prompt: display}%>
-
-
-
 
   <%= pt.check_box :captain %>
   <%= display = "Captain?" %>
       <% end %>
+      <br>
     <%= f.submit %>
   <% end %>

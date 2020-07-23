@@ -1,23 +1,28 @@
-<br>
+<header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <section class="contact bg-primary" id="contact">
 
-<h1> List of NBA Players </h1>
+<h2 class="section-heading">
+<h2> List of NBA Players </h2>
 
-  <h3>Guards</h3>
-  <ol>
+
+  <h2>Guards</h2>
+  <ul>
     <% @guards.each do |p| %>
-    <%=  p.fullname + ' -- ' + p.country + ' -- ' +  p.yearsPro + ' years pro' %><br/>
+    <%=  p.fullname + ' -- ' + p.country %><br/>
     <% end %>
-  </ol>
-  <h3>Forwards</h3>
-    <ol>
+  </ul>
+  <h2>Forwards</h2>
+    <ul>
       <% @forwards.each do |p| %>
-      <%=  p.fullname + ' -- ' + p.country + ' -- ' +  p.yearsPro + ' years pro' %><br/>
+      <%=  p.fullname + ' -- ' + p.country%><br/>
       <% end %>
-    </ol>
+    </ul>
 
-  <h3>Centers</h3>
-      <ol>
+  <h2>Centers</h2>
+      <ul>
         <% @centers.each do |p| %>
-        <%=  p.fullname + ' -- ' + p.country + ' -- ' +  p.yearsPro + ' years pro' %><br/>
+        <%=  p.fullname + ' -- ' + p.country%><br/>
         <% end %>
-      </ol>
+      </ul>

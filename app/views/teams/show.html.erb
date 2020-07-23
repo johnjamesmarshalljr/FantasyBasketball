@@ -1,18 +1,19 @@
-<br>
-<br>
+<section class="contact bg-primary" id="contact">
+    <div class="container">
+      <%= image_tag("ben.jpg", width: 500, class: "img-responsive center-block") %>
+        <div class="header-content mx-auto">
+       <h1 class="mb-5">
               <h1> Here is your team! </h1>
-<h3> Click to Edit Team: <%= link_to @team.team_name, edit_user_team_path(current_user, @team) %> </h3>
-
+              <h3> Click to Edit Team: <%= link_to @team.team_name, edit_user_team_path(current_user, @team) %> </h3>
 <% @team.players.each do |p| %>
-  <%=  p.fullname + ', ' + p.position + ', ' + p.country %><br>
-
+<%=  p.fullname + ', ' + p.position + ', ' + p.country %><br>
     <%  end %>
   <b>  <%= @team.get_captain.fullname %> is  your current captain </b>
     <br>
     <br>
-    <div class="myButton">
+    <div class="button">
 <%= link_to 'Delete Team', user_team_path(@team), method: :delete %>
-    </div>
+
 
 <!-- active/ team captain submittable form -->
 <!-- @team.player_teams   -->
