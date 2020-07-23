@@ -19,14 +19,15 @@
       <% display = "select a center"  %>
     <% end %>
 <%=   pt.select :player_id, options_from_collection_for_select(Player.all, :id, :fullname), prompt: display%>
-
 <%= pt.check_box :captain %>
 <%= display = "Captain?" %>
-
     <% end %>
-
+<br>
+<br>
  <%=f.submit%>
 <% end %>
 <br>
-<%= image_tag("steph.jpg", width: 300, class: "img-responsive center-block") %>
+<br>
+
+<%= image_tag("steph.jpg", width: 500, class: "img-responsive center-block") %>
 </div>

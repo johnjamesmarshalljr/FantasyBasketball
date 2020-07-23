@@ -1,14 +1,13 @@
 <div class="col-lg-6">
-                <div class="feature-item">
-                  <i class="icon-lock-open text-primary"></i>
-    <div class="container h-100">
-      <div class="row h-100">
-        <section class="contact bg-primary" id="contact">
-            <div class="header-content mx-auto">
+      <div class="feature-item">
+          <div class="container h-100">
+            <section class="contact bg-primary">
                     <%= image_tag("giannis.jpg", width: 400, class: "img-responsive center-block") %>
 
 <%@teams.each do |t| %><br>
+
 <%=  link_to t[:team_name], user_team_path(current_user, t)  %> <br>
+
 <%@player_teams = PlayerTeam.where(:team_id => t.id)%>
 <% t.players.each do |ply| %><br>
 <%=  ply.firstName + ' ' + ply.lastName + ", "   + "Position: " + ply.position %>
