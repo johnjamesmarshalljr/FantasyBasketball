@@ -1,0 +1,21 @@
+<% @team = @team || @new_team %>
+
+<% if @team.errors.any? %>
+  <%= render 'layouts/error', {obj: @team} %>
+  <% end%>
+<br>
+
+  <%= form_for @team do |f| %>
+    <%= f.label :team_name %>
+    <%= f.text_field :team_name %>
+    <h3> Choose Three Players // Pick One Captain! </h3>
+    <%= f.fields_for :player_teams do |pt| %>
+
+        <%=   pt.select :player_id, options_from_collection_for_select(Player.all, :id, :fullname), {include_blank: true, prompt: display}%>
+  <%= pt.check_box :captain %>
+  <%= display = "Captain?" %>
+  <br>
+      <% end %>
+      <br>
+    <%= f.submit %>
+  <% end %>

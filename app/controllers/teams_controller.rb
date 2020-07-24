@@ -56,6 +56,10 @@ class TeamsController < ApplicationController
 
   private
 
+  def get_team
+    @team = Team.find_by(id:params[:id])
+  end
+
   def team_params
     params.require(:team).permit(:team_name, :player_teams_attributes => [:player_id, :captain, :id])
   end
