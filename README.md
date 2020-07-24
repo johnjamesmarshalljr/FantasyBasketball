@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an NBA Fantasy 3-on-3 Team Builder
 
-Things you may want to cover:
+Video Walk-Through:
+https://youtu.be/0qWo1vm6D9k
 
-* Ruby version
+Blog Post about creating this project for Flatiron:
+https://jerkzilla.github.io/rails_project_how_to_prepare
 
-* System dependencies
+Getting started
+To get the Rails server running locally:
 
-* Configuration
+Clone this repo
+bundle install to install all req'd dependencies
+rake db:migrate to make all database migrations
+rails s to start the local server
 
-* Database creation
+Dependencies
 
-* Database initialization
+Devise - For implementing authentication
+Omniauth - User sign-in/sign-up through Github
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Folders
+app/models - Contains the database models for the application where we can define methods, validations, queries, and relations to other models.
+app/views - Contains templates for pages presented to user
+app/controllers - Contains the controllers where requests are routed to their actions, where we find and manipulate our models and return them for the views to render.
+config - Contains configuration files for our Rails application and for our database, along with an initializers folder for scripts that get run on boot.
+db - Contains the migrations needed to create our database schema.
