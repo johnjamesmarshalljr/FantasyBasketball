@@ -57,7 +57,7 @@ Specs:
 
         /teams
 
-Confirm:
+Confirm: 
 
  X The application is pretty DRY
 
@@ -67,4 +67,3 @@ Confirm:
  X Views use helper methods if appropriate
 
  X Views use partials if appropriate
- 
