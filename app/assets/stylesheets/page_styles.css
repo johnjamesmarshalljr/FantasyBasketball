@@ -281,7 +281,7 @@ hr.light {
 
 
   @keyframes example {
-  from {background-color: #c7b3e8;}
+  from {background-color: #111111 ;}
   to {background-color:#7b98e8;}
 }
 
@@ -291,13 +291,15 @@ div[class=Thx] {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding: 22px;
   background-color: #EC4207;
-  text-shadow: 0px 1px 0px #AE00C6, 0 0 2px #E54C00 , 0 0 5px white;
+  text-shadow: 0px 1px 0px #AE00C6, 0 0 2px #E54C00 , 0 0 3px white;
   animation-name: example;
-  animation-duration: 8s;
-  animation-iteration-count: 20;
+  animation-duration: 40s;
+  animation-iteration-count: 40;
   border-radius: 8px;
   max-width: 100%;
+  border: groove;
 height: auto;
 }
 
@@ -306,10 +308,10 @@ div[class=bb] {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-
+border: ridge;
   text-shadow: 2px 1px 0px #FD006F, 0 0 2px #E54C00 , 0 0 5px white;
   animation-name: example;
-  animation-duration: .3s;
+  animation-duration: 33s;
   animation-iteration-count: infinite;
   max-width: 100%;
 
@@ -319,7 +321,7 @@ div[class=bb] {
 
 img {
 box-shadow: 10px 10px;
-  border:2px solid #fff;
+  border:2px groove #fff;
 
   -moz-box-shadow: inset 10px 10px 50px #fff;
   -webkit-box-shadow: inset 10px 10px 50px #fff;
@@ -380,6 +382,7 @@ p {
 
 section {
   padding: 10px 0;
+  margin-top: auto;
 }
 
 section h2 {

@@ -1,12 +1,10 @@
 class TeamsController < ApplicationController
-# before_action :authenticate_user, except: [:index, :show]
+# before_action :get_team, except: [:index, :show]
 
   def index
     if params[:user_id]
       @teams = current_user.teams
       @players = current_user.players
-    else
-      @teams = Team.all
     end
   end
 
@@ -35,7 +33,6 @@ class TeamsController < ApplicationController
   def edit
     @team = Team.find_by(id:params[:id])
     if current_user.teams.include?(@team)
-      @all_users = User.all
       render :edit
     else
     redirect_to user_teams_path(current_user)
@@ -47,10 +44,8 @@ class TeamsController < ApplicationController
     if @team.update(team_params)
       redirect_to user_team_path(current_user, @team)
     else
-      @all_users = User.all
     render :edit
     end
-    @all_users = User.all
   end
 
   def destroy

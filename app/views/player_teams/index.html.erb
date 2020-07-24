@@ -4,6 +4,7 @@
             <section class="contact bg-primary">
                     <%= image_tag("giannis.jpg", width: 400, class: "img-responsive center-block") %>
 <br>
+
 <%@teams.each do |t| %><br>
 
 <%=  link_to t[:team_name], user_team_path(current_user, t)  %> <br>

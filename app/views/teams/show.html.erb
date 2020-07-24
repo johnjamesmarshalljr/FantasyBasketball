@@ -2,20 +2,24 @@
     <div class="container">
 
         <div class="Thx">
-              <h1> Here is your team! </h1>
+              <h2> '<%=@team.team_name%>' </h2>
 
 <% @team.players.each do |p| %>
+ <p class="text-muted">
 <%=  p.fullname + ', ' + p.position + ', ' + p.country %><br>
     <%  end %>
+  </p>
     <br>
-  <b>  <%= @team.get_captain.fullname %> is  your current captain </b>
-    <br>
+    <button class="btn" > <%= link_to 'Edit players', edit_user_team_path(current_user, @team) %>  <button class="btn" ><%= link_to 'Delete Team', user_team_path(@team), method: :delete %><br>
+  </button>
+  </div>
+  <div class="row">
+          <div class="col-lg-4 my-auto">
+            <div class="device-container">
+  <b> <p class="text-muted"> <%= @team.get_captain.fullname %> is  your current captain </b>
 
-        <h4> Edit Team:<button class="btn" > <%= link_to @team.team_name, edit_user_team_path(current_user, @team) %> </h4>
+        <br>
+        <%= image_tag("ben.jpg", width: 500, class: "img-responsive center-block") %>
 
-      <button class="btn" >
-<%= link_to 'Delete Team', user_team_path(@team), method: :delete %>
-        </button>
 </div>
 </div>
-<%= image_tag("ben.jpg", width: 500, class: "img-responsive center-block") %>
