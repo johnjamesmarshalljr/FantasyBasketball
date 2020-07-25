@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-# before_action :get_team, except: [:index, :create, :new]
+ before_action :authenticate_user!
 
   def index
     if params[:user_id]
