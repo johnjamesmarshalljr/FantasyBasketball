@@ -7,10 +7,4 @@ class PlayerTeamsController < ApplicationController
     end
   end
 
-private
-
-  def pt_params
-    params.permit(:guard_id, :forward_id, :center_id, :player_teams_attributes)
-  end
-
 end

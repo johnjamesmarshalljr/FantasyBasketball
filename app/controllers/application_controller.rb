@@ -4,6 +4,5 @@ class ApplicationController < ActionController::Base
 
   end
 
-#need strong params
 
 end
