@@ -3,6 +3,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:github]
+
   has_many :teams
   has_many :players, through: :teams
 
@@ -10,11 +11,6 @@ class User < ApplicationRecord
                         :confirmation => true,
                         :length => {:within => 6..40},
                         :on => :create
-
-  validates :password, :presence => true,
-                        :confirmation => true,
-                        :length => {:within => 6..40},
-                        :on => :update
 
   validates :email, uniqueness: true
   validates :email, presence: true

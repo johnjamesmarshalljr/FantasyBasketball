@@ -4,8 +4,6 @@ class PlayerTeamsController < ApplicationController
     if current_user
       @teams = current_user.teams
       @player_teams = PlayerTeam.where(:team_id => params[:team_id])
-    else
-      @teams = Team.all
     end
   end
 
