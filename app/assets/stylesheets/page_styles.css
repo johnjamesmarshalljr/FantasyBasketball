@@ -116,7 +116,7 @@ hr.light {
 
 /* delete button for subs */
   .delete_button {
-    {
+    
       background-color: #4CAF50; /* Green */
       border: none;
       color: white;
@@ -134,7 +134,7 @@ hr.light {
       text-align: center;
       border-radius: 4px;
       display: inline-block;
-    }
+    
   }
 
   input[type=string], select {
