@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_07_19_114251) do
   enable_extension "plpgsql"
 
   create_table "player_teams", force: :cascade do |t|
-    t.integer "team_id"
-    t.integer "player_id"
+    t.bigint "team_id"
+    t.bigint "player_id"
     t.boolean "captain", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
