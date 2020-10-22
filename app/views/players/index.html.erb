@@ -1,0 +1,33 @@
+<div class="col-lg-6">
+      <div class="feature-item">
+          <div class="container h-100">
+            <section class="contact bb-primary" id="contact">
+                <div class="section-heading">
+
+<div class="bb">
+<h2> Plan your future roster here! </h2>
+</div>
+
+  <h2>Guards</h2>
+  <%= image_tag("hqdefault.jpg", width: 400, class: "img-responsive center-block") %>
+  <ul>
+    <% @guards.each do |p| %>
+    <%=  p.fullname + ' -- ' + p.country %><br/>
+    <% end %>
+  </ul>
+
+  <h2>Forwards</h2>
+    <%= image_tag("durant.jpg", width: 400, class: "img-responsive center-block") %>
+    <ul>
+      <% @forwards.each do |p| %>
+      <%=  p.fullname + ' -- ' + p.country%><br/>
+      <% end %>
+    </ul>
+
+  <h2>Centers</h2>
+  <%= image_tag("embiid.jpg", width: 500, class: "img-responsive center-block") %>
+      <ul>
+        <% @centers.each do |p| %>
+        <%=  p.fullname + ' -- ' + p.country%><br/>
+        <% end %>
+      </ul>
