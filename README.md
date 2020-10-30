@@ -2,6 +2,8 @@
 
 This is an NBA Fantasy 3-on-3 Team Builder
 
+Site is live here: https://jjs-fantasy-basketball.herokuapp.com/
+
 Video Walk-Through:
 https://youtu.be/0qWo1vm6D9k
 
